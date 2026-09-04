@@ -15,11 +15,27 @@ h2 { font-size: 1em; }
             Copyright (c) 2004 S. Rosmorduc, G. Watson, J. Hirst
             CC BY-SA 3.0 // GFDL -->
     <link rel="icon" type="image/png" href="assets/hiero_G1.png">
-    <!-- MathJax CDN -->
+    <!-- MathJax -->
+    <!--
     <script defer
             src="https://cdn.jsdelivr.net/npm/mathjax@4.1.3/tex-chtml.js"
             integrity="sha384-IgpmJyK7IVIVd18E1Ubslp9a1s6/6VBt9aJFbpzNIJPPMaxwEV7OxR/xY0hHbSck"
             crossorigin="anonymous"></script>
+    -->
+    <!-- KaTeX -->
+    <!-- katex_version is defined in _config.yml -->
+    {% assign katex_ver = site.katex_version %}
+    <link rel="stylesheet" href="assets/katex-{{ katex_ver }}/katex.min.css">
+    <script defer src="assets/katex-{{ katex_ver }}/katex.min.js"></script>
+    <script defer src="assets/katex-{{ katex_ver }}/contrib/auto-render.min.js"></script>
+    <!-- Only allow html output -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                output: "html",
+            });
+        });
+    </script>
 </head>
 
 <body style="font-family: serif;">
@@ -33,13 +49,13 @@ h2 { font-size: 1em; }
     <!-- <p>Coming soon...</p> -->
 
     <h2>Thesis</h2>
-    <ol>
+    <ul style="list-style-type: square;">
         <li>
             The \(\Pi_1\)-Nondefinability of \(\mathrm{NS}_{\omega_1}\).
             PhD thesis. University of Münster, 2026.
             <a target="_blank" rel="noopener noreferrer"
                                href="thesis/XiuyuanSun_Thesis_ULB2.pdf">PDF</a>
         </li>
-    </ol>
+    </ul>
 </body>
 </html>
